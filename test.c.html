@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>source2html</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color:lightgrey;">
+<pre>
+<span class="comment">/* =============================================
+ * test.c  –  covers all Source2HTML token types
+ * ============================================= */</span>
+
+<span class="preprocess_dir">#include </span><span class="header_file">&lt;stdio.h&gt;</span>
+<span class="preprocess_dir">#include </span><span class="header_file">&lt;stdlib.h&gt;</span>
+<span class="preprocess_dir">#include </span><span class="header_file"></span><span class="string">"my_header.h"</span>
+
+<span class="preprocess_dir">#define </span>MAX_SIZE   <span class="numeric_constant">100</span>
+<span class="preprocess_dir">#define </span>PI         <span class="numeric_constant">3.14159</span>
+
+<span class="comment">// single-line comment
+</span>
+<span class="comment">/* multi-line
+   comment block */</span>
+
+<span class="reserved_key1">typedef</span> <span class="reserved_key1">struct</span> {
+    <span class="reserved_key1">int</span>   id;
+    <span class="reserved_key1">float</span> score;
+    <span class="reserved_key1">char</span>  grade;
+} Student;
+
+<span class="reserved_key1">int</span> main(<span class="reserved_key1">void</span>)
+{
+    <span class="comment">/* ---- data types (reserved_key1) ---- */</span>
+    <span class="reserved_key1">int</span>    count  = <span class="numeric_constant">0</span>;
+    <span class="reserved_key1">float</span>  value  = <span class="numeric_constant">3.14</span>;
+    <span class="reserved_key1">double</span> ratio  = <span class="numeric_constant">0xFF</span>;      <span class="comment">/* hex constant  */</span>
+    <span class="reserved_key1">char</span>   letter = A;       <span class="comment">/* ASCII char    */</span>
+    <span class="reserved_key1">char</span>   newline = \n;     <span class="comment">/* escaped char  */</span>
+    <span class="reserved_key1">void</span>  *ptr    = NULL;
+
+    <span class="comment">/* ---- string literals ---- */</span>
+    <span class="reserved_key1">char</span> *msg = <span class="string">"Hello, World!\n"</span>;
+    <span class="reserved_key1">char</span> *esc = <span class="string">"She said \"hi\""</span>;
+
+    <span class="comment">/* ---- control flow (reserved_key2) ---- */</span>
+    <span class="reserved_key2">if</span> (count > <span class="numeric_constant">0</span>) {
+        <span class="reserved_key2">for</span> (<span class="reserved_key1">int</span> i = <span class="numeric_constant">0</span>; i < MAX_SIZE; i++) {
+            <span class="reserved_key2">while</span> (value > <span class="numeric_constant">0</span>) {
+                value--;
+            }
+        }
+    } <span class="reserved_key2">else</span> {
+        <span class="reserved_key2">switch</span> (count) {
+            <span class="reserved_key2">case</span> <span class="numeric_constant">0</span>:
+                <span class="reserved_key2">return</span> <span class="numeric_constant">0</span>;
+            <span class="reserved_key2">default</span>:
+                <span class="reserved_key2">break</span>;
+        }
+    }
+
+    <span class="reserved_key2">do</span> {
+        count++;
+    } <span class="reserved_key2">while</span> (count < <span class="numeric_constant">10</span>);
+
+    <span class="reserved_key2">return</span> <span class="numeric_constant">0</span>;
+}
+</pre>
+</body>
+</html>
